@@ -233,7 +233,7 @@ public class NioEndpoint extends AbstractJsseEndpoint<NioChannel> {
 
         // Initialize thread count defaults for acceptor, poller
         if (acceptorThreadCount == 0) {
-            // FIXME: Doesn't seem to work that well with multiple accept threads
+            // FIXME: Doesn't seem to work that well with multiple accept threads 使用多个接受线程似乎不太好
             acceptorThreadCount = 1;
         }
         if (pollerThreadCount <= 0) {

@@ -19,7 +19,7 @@ package org.apache.catalina;
 
 /**
  * Common interface for component life cycle methods.  Catalina components
- * may implement this interface (as well as the appropriate interface(s) for
+ * may implement this interface (as well as the appropriate（合适的） interface(s) for
  * the functionality they support) in order to provide a consistent mechanism
  * to start and stop the component.
  * <br>

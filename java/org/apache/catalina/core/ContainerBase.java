@@ -881,7 +881,9 @@ public abstract class ContainerBase extends LifecycleMBeanBase
 
     }
 
-
+    /**
+     * 初始化 startStopExecutor 线程池
+     */
     @Override
     protected void initInternal() throws LifecycleException {
         BlockingQueue<Runnable> startStopQueue = new LinkedBlockingQueue<>();
@@ -921,6 +923,7 @@ public abstract class ContainerBase extends LifecycleMBeanBase
         Container children[] = findChildren();
         List<Future<Void>> results = new ArrayList<>();
         for (int i = 0; i < children.length; i++) {
+            // 线程池中调用子类 start 方法
             results.add(startStopExecutor.submit(new StartChild(children[i])));
         }
 
@@ -948,7 +951,7 @@ public abstract class ContainerBase extends LifecycleMBeanBase
             ((Lifecycle) pipeline).start();
         }
 
-
+        // 设置组件状态， 并发送相应事件
         setState(LifecycleState.STARTING);
 
         // Start our thread

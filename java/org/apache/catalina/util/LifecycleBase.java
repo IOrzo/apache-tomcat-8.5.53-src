@@ -31,7 +31,7 @@ import org.apache.tomcat.util.res.StringManager;
 
 /**
  * Base implementation of the {@link Lifecycle} interface that implements the
- * state transition rules for {@link Lifecycle#start()} and
+ * state transition rules（状态转换规则） for {@link Lifecycle#start()} and
  * {@link Lifecycle#stop()}
  */
 public abstract class LifecycleBase implements Lifecycle {

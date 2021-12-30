@@ -301,7 +301,10 @@ public final class Bootstrap {
         if (log.isDebugEnabled()) {
             log.debug("Calling startup class " + method);
         }
-        // 调用org.apache.catalina.startup.Catalina.load()方法
+        /**
+         * 调用 load() 方法
+         * @see org.apache.catalina.startup.Catalina#load()
+         */
         method.invoke(catalinaDaemon, param);
     }
 
