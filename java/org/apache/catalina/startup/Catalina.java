@@ -279,13 +279,13 @@ public class Catalina {
         long t1=System.currentTimeMillis();
         // Initialize the digester
         Digester digester = new Digester();
-        // 是否对xml文档进行类似XSD等类型的校验, 默认为false
+        // 是否对 xml 文档进行类似 XSD 等类型的校验, 默认为 false
         digester.setValidating(false);
-        // 是否进行节点设置规则校验，如果xml中相应节点没有设置解析规则会在控制台显示提示信息
+        // 是否进行节点设置规则校验，如果 xml 中相应节点没有设置解析规则会在控制台显示提示信息
         digester.setRulesValidation(true);
 
-        // 将XML节点中的className作为假属性，不必调用默认的setter方法
-        // 一般的节点属性在解析时会以属性作为入参调用该节点相应对象的setter方法，而className属性的作用提示解析器使用该属性的值作来实例化对象
+        // 将 XML 节点中的 className 作为假属性，不必调用默认的 setter 方法
+        // 一般的节点属性在解析时会以属性作为入参调用该节点相应对象的 setter 方法，而 className 属性的作用提示解析器使用该属性的值作来实例化对象
         // adj. fake 假的
         Map<Class<?>, List<String>> fakeAttributes = new HashMap<>();
         List<String> objectAttrs = new ArrayList<>();
@@ -296,7 +296,7 @@ public class Catalina {
         contextAttrs.add("source");
         fakeAttributes.put(StandardContext.class, contextAttrs);
         digester.setFakeAttributes(fakeAttributes);
-        // 使用当前线程的上下文类加载器，主要加载FactoryCreateRule和ObjectCreateRule
+        // 使用当前线程的上下文类加载器，主要加载 FactoryCreateRule 和 ObjectCreateRule
         digester.setUseContextClassLoader(true);
 
         // Configure the actions we will be using
@@ -315,7 +315,7 @@ public class Catalina {
                             "setGlobalNamingResources",
                             "org.apache.catalina.deploy.NamingResourcesImpl");
 
-        // 参数className从配置文件获取
+        // 参数 className 从配置文件获取
         digester.addObjectCreate("Server/Listener",
                                  null, // MUST be specified in the element
                                  "className");

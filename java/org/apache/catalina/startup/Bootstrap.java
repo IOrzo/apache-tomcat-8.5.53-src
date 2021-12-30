@@ -442,6 +442,7 @@ public final class Bootstrap {
      * -Djava.io.tmpdir=catalina-home/temp
      * -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
      * -Djava.util.logging.config.file=catalina-home/conf/logging.properties
+     * 当前完成启动命令：-Dcatalina.home=catalina-home -Dcatalina.base=catalina-home -Djava.endorsed.dirs=catalina-home/endorsed -Djava.io.tmpdir=catalina-home/temp -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djava.util.logging.config.file=catalina-home/conf/logging.properties -Xmx512m -Xms512m -Dfile.encoding=UTF-8 -Duser.country=EN
      * 参考资料: https://blog.csdn.net/yekong1225/article/details/81000446
      * @param args Command line arguments to be processed
      */
